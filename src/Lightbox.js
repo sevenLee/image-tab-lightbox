@@ -76,12 +76,12 @@ class Lightbox extends Component {
 
 			// if we know the user's direction just get one image
 			// otherwise, to be safe, we need to grab one in each direction
-			if (preloadIndex) {
-				this.preloadImage(preloadIndex);
-			} else {
-				this.preloadImage(prevIndex);
-				this.preloadImage(nextIndex);
-			}
+			// if (preloadIndex) {
+			// 	this.preloadImage(preloadIndex);
+			// } else {
+			// 	this.preloadImage(prevIndex);
+			// 	this.preloadImage(nextIndex);
+			// }
 		}
 
 		// preload current image

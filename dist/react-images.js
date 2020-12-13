@@ -1052,29 +1052,6 @@ var Lightbox = function (_Component) {
 			if (!canUseDom) return;
 
 			// preload images
-			if (nextProps.preloadNextImage) {
-				var currentIndex = this.props.currentImage;
-				var nextIndex = nextProps.currentImage + 1;
-				var prevIndex = nextProps.currentImage - 1;
-				var preloadIndex = void 0;
-
-				if (currentIndex && nextProps.currentImage > currentIndex) {
-					preloadIndex = nextIndex;
-				} else if (currentIndex && nextProps.currentImage < currentIndex) {
-					preloadIndex = prevIndex;
-				}
-
-				// if we know the user's direction just get one image
-				// otherwise, to be safe, we need to grab one in each direction
-				if (preloadIndex) {
-					this.preloadImage(preloadIndex);
-				} else {
-					this.preloadImage(prevIndex);
-					this.preloadImage(nextIndex);
-				}
-			}
-
-			// preload current image
 			if (this.props.currentImage !== nextProps.currentImage || !this.props.isOpen && nextProps.isOpen) {
 				var img = this.preloadImageData(nextProps.images[nextProps.currentImage], this.handleImageLoaded);
 				if (img) this.setState({ imageLoaded: img.complete });
